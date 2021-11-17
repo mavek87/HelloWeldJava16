@@ -7,12 +7,12 @@ import jakarta.inject.Inject;
 public class App {
 
     private final WelcomeService welcomeService;
-    private final User randomPerson;
+    private final User randomUser;
 
     @Inject
-    public App(WelcomeService welcomeService, User randomPerson) {
+    public App(WelcomeService welcomeService, User randomUser) {
         this.welcomeService = welcomeService;
-        this.randomPerson = randomPerson;
+        this.randomUser = randomUser;
     }
 
     public void start() {
@@ -22,6 +22,6 @@ public class App {
         welcomeService.welcomeUser(new User("Samantha", 32));
 
         System.out.println("Welcome injected random user, created using a RandomUserProducer");
-        welcomeService.welcomeUser(randomPerson);
+        welcomeService.welcomeUser(randomUser);
     }
 }
